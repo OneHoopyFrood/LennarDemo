@@ -1,4 +1,5 @@
 # LennarDemo
+
 Demo app for Lennar
 
 ## The Brief
@@ -19,9 +20,10 @@ Build a **responsive Next.js web app** using **TypeScript**, matching the provid
 
 **Functionality**
 
-Implement the **“Start free trial”** button. 
+Implement the **“Start free trial”** button.
 
 On click:
+
 - Capture the **email input**.
 - Trigger a **GraphQL mutation** to store the email in a **dummy backend database** (in-memory object or array).
 - **Validate** the email and handle any errors gracefully.
@@ -37,24 +39,23 @@ On click:
 
 - Briefly describe how you would structure a table to store emails in a real **SQL-based database**. (No implementation required.)
 
-----
-
+---
 
 ## Project structure
 
 **Tools chosen**
+
 - Next.js (required)
 - TypeScript (required)
 - Apollo Client
 - appollo-server-micro
 - Tailwind CSS (ease and familiarity)
 
-
-
 ## Running
 
 ```bash
-yarn dev
+yarn install
+yarn go
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser. 
+Open [http://localhost:3000](http://localhost:3000) with your browser.

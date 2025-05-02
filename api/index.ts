@@ -26,7 +26,7 @@ const resolvers = {
     emails: () => emails,
   },
   Mutation: {
-    addEmail: (_, { email }: { email: string }) => {
+    addEmail: (_: unknown, { email }: { email: string }) => {
       const newEmail = { email };
 
       // Validate email format
@@ -53,7 +53,8 @@ const server = new ApolloServer({
 });
 
 // Start the server
-const { url } = await startStandaloneServer(server, {
+startStandaloneServer(server, {
   listen: { port: 4000 },
+}).then(({ url }) => {
+  console.log(`🚀  Server ready at: ${url}`);
 });
-console.log(`🚀  Server ready at: ${url}`);
