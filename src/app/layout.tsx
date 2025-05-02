@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Image from "next/image";
 import React from "react";
+import TrialButton from "./components/TrialButton";
 import "./globals.css";
 import illustration from "./public/illustration.svg";
 import mark from "./public/mark.svg";
@@ -34,9 +35,7 @@ export default function RootLayout({
             />
             <div>
               <button className="text-sm font-medium mr-4">Log in</button>
-              <button className="text-sm font-medium bg-blue-600 px-4 py-2 rounded">
-                Start free trial
-              </button>
+              <TrialButton className="text-sm font-medium" />
             </div>
           </header>
           <div className="md:flex md:flex-row md:justify-between md:max-w-4xl w-full">
