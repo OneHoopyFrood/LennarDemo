@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2020", // Updated for better modern JavaScript support
-    "lib": ["dom", "dom.iterable", "es2020"], // Match the updated target
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2020"
+    ], // Match the updated target
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -11,7 +15,7 @@
     "moduleResolution": "node", // Changed to "node" for better compatibility
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
     "forceConsistentCasingInFileNames": true, // Enforce consistent casing
     "plugins": [
@@ -20,7 +24,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -30,5 +36,9 @@
     ".next/types/**/*.ts",
     "src/**/*.js" // Include JavaScript files in the src folder
   ],
-  "exclude": ["node_modules", "dist", ".turbo"] // Added common exclusions
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".turbo"
+  ] // Added common exclusions
 }
