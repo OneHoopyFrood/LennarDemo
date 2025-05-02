@@ -4,17 +4,17 @@ export default function Home() {
   return (
     <>
       {/* Hero Text */}
-      <div>
-        <h1 className="text-4xl text-left font-bold mb-4">
+      <div className="max-w-md md:max-w-2xl lg:max-w-4xl">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           A better way to <br />
           <span className="text-indigo-400">ship web apps</span>
         </h1>
-        <p className="text-gray-300 mb-6">
+        <p className="text-gray-300 mb-6 text-sm md:text-base lg:text-lg">
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui Lorem
           cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
         </p>
       </div>
-      <form>
+      <form className="max-w-md md:max-w-lg lg:max-w-xl">
         <input
           type="email"
           placeholder="Enter your email"
@@ -27,7 +27,7 @@ export default function Home() {
           Start free trial
         </button>
       </form>
-      <p className="text-gray-300 text-sm mt-4">
+      <p className="text-gray-300 text-sm mt-4 max-w-md md:max-w-lg lg:max-w-xl">
         Start your free 14-day trial, no credit card necessary. By providing
         your email, you agree to our &nbsp;
         <a href="#terms" className="font-bold text-white underline">
