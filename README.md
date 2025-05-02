@@ -1,39 +1,60 @@
 # LennarDemo
 Demo app as part of an interview process for Lennar
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## The Brief
 
-## Getting Started
+### Overview
 
-First, run the development server:
+Build a **responsive Next.js web app** using **TypeScript**, matching the provided **Figma design**. Review all design specs and implementation notes carefully before starting.
+
+**Design file:**  
+[Figma - Lennar Full-Stack Coding Challenge](https://www.figma.com/design/br5MDf1ZXyuVRA2cDug1ov/Lennar-full-stack-coding-challenge?node-id=0-1)
+
+### Requirements
+
+**UI Implementation**
+
+- Recreate the design as a **responsive** Next.js app using **TypeScript**.
+- You may use any design framework or component library for base components.
+
+**Functionality**
+
+Implement the **“Start free trial”** button. 
+
+On click:
+- Capture the **email input**.
+- Trigger a **GraphQL mutation** to store the email in a **dummy backend database** (in-memory object or array).
+- **Validate** the email and handle any errors gracefully.
+- Return a response to the client with the submitted email.
+
+**Backend Setup**
+
+- Set up a **GraphQL server** using a tool of your choice (e.g., `apollo-server-micro`).
+- Expose it via a **Next.js API route**.
+- Use any **GraphQL client** or **server actions** to make requests.
+
+**SQL Schema Design**
+
+- Briefly describe how you would structure a table to store emails in a real **SQL-based database**. (No implementation required.)
+
+----
+
+
+## Project structure
+
+**Tools chosen**
+- Next.js (required)
+- TypeScript (required)
+- Apollo Client
+- appollo-server-micro
+- Tailwind CSS (ease and familiarity)
+
+
+
+## Running
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) with your browser. 
