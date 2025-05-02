@@ -1,7 +1,22 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 import TrialButton from "./components/TrialButton";
 
 export default function Home() {
+  const [email, setEmail] = React.useState("");
+
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    addEventListener("email:focus", () => {
+      if (emailInputRef.current) {
+        emailInputRef.current.focus();
+        emailInputRef.current.classList.add("ring-4", "ring-yellow-300");
+      }
+    });
+  }, [emailInputRef]);
+
   return (
     <>
       {/* Hero Text */}
@@ -20,8 +35,13 @@ export default function Home() {
           type="email"
           placeholder="Enter your email"
           className="w-full px-4 py-2 mb-4 text-black placeholder-gray-500 rounded border border-gray-300 bg-white"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          ref={emailInputRef}
+          required
+          aria-label="Email address"
         />
-        <TrialButton className="w-full" />
+        <TrialButton className="w-full" email={email} />
       </form>
       <p className="text-gray-300 text-sm mt-4 max-w-md md:max-w-lg lg:max-w-xl">
         Start your free 14-day trial, no credit card necessary. By providing

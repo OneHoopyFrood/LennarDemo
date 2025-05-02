@@ -2,16 +2,21 @@ import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
 const typeDefs = `#graphql
-  type Email {
+  type EmailRecord {
     email: String
   }
 
+  type EmailResponse {
+    success: Boolean
+    message: String
+  }
+
   type Query {
-    emails: [Email]
+    emails: [EmailRecord]
   }
 
   type Mutation {
-    addEmail(email: String!): Email
+    addEmail(email: String!): EmailResponse
   }
 `;
 
@@ -29,20 +34,30 @@ const resolvers = {
     addEmail: (_: unknown, { email }: { email: string }) => {
       const newEmail = { email };
 
-      // Validate email format
+      // Validate email format (simple regex check, not exhaustive)
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        throw new Error("Invalid email format");
+        return {
+          success: false,
+          message: "Invalid email format",
+        };
       }
+
       // Check for duplicates
       const emailExists = emails.some((e) => e.email === email);
       if (emailExists) {
-        throw new Error("Email already exists");
+        return {
+          success: false,
+          message: "Email already exists",
+        };
       }
 
       // Add email to the list
       emails.push(newEmail);
-      return newEmail;
+      return {
+        success: true,
+        message: "Email added successfully",
+      };
     },
   },
 };
