@@ -2,6 +2,28 @@
 
 Demo app for Lennar
 
+## Running
+
+```bash
+yarn install
+yarn go
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+### Comments
+
+This is a very quick demo, and thus quite rough. I would usually continue on from this point and clean up until I was more satisfied. A few things I'd do next with such a project:
+- Work with designer to determine what clicking the header "trial" button should do. Right now it just highlights and focuses the hero input field.
+- Use an actual client lib, assuming I'd have more graphql calls to make
+- Add testing, which I skipped for speed here.
+- Create a beter project structure. Perhaps a mono-repo to separate the backend and frontend while keeping them in sync naturally.
+- Refine the responsive choices. This is very rough right now. The illustration graphic for example doesn't hold the position it's meant to according to the design.
+
+This isn't exaustive, just a few things that bothered me that I figured it'd be worth mentioning.
+
+----
+
 ## The Brief
 
 ### Overview
@@ -47,15 +69,8 @@ On click:
 
 - Next.js (required)
 - TypeScript (required)
-- Apollo Client
-- appollo-server-micro
-- Tailwind CSS (ease and familiarity)
+- Apollo Server
+- Fetch API (easy, already included)
+- Tailwind CSS (ease and familiarity, figma seems to reference it in color values)
 
-## Running
 
-```bash
-yarn install
-yarn go
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser.
